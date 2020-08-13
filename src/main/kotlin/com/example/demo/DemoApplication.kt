@@ -14,9 +14,13 @@ import org.springframework.web.bind.annotation.RestController
 class DemoApplication
 
 fun main(args: Array<String>) {
-	// SpringApplication.run(DemoApplication::class.java, *args)
+//	val ctx = SpringApplication.run(DemoApplication::class.java, *args)
+//	for (bean_name in ctx.beanDefinitionNames) {
+//		println(bean_name)
+//	}
 	runApplication<DemoApplication>(*args) {
 		setBannerMode(Banner.Mode.OFF)
-
+	}.beanDefinitionNames.sorted().forEach {
+		println(it)
 	}
 }

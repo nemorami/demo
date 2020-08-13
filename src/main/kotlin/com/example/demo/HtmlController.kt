@@ -30,12 +30,12 @@ class HtmlController {
     @GetMapping("/welcome-model-map")
     fun welcome_model_map(model: ModelMap): String {
         model.put("name", "XYZ")
-        return "welcome-model-map"
+        return "welcome_model_map"
     }
 
     @GetMapping("/welcome-model-view")
     fun welcome_model_view(model: ModelMap): ModelAndView {
         model.put("name", "YuSangSun")
-        return ModelAndView("welcome-model-view", model)
+        return ModelAndView("welcome_model_view", model)
     }
 }
