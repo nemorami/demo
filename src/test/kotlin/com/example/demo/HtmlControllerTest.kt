@@ -22,7 +22,10 @@ class HtmlControllerTest{
     }
     @Test
     fun welcome_test() {
-        this.mockMvc.get("/welcome")
+        this.mockMvc.get("/welcome") {
+            accept(MediaType.APPLICATION_JSON)
+        }
+
                 .andExpect {
                     status { isOk() }
                 }
@@ -41,8 +44,6 @@ class HtmlControllerTest{
         this.mockMvc.get("/welcome-model-view")
                 .andExpect { model { attribute("name", "YuSangSun") }
                 view { name("welcome_model_view") }}
-
-
     }
 }
 
