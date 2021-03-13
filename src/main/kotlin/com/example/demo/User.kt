@@ -1,3 +1,13 @@
 package com.example.demo
 
-data class User(val guid: String, val name: String, val userId: String, val password: String, val password2: String)
+import javax.persistence.*
+
+@Entity
+class User(
+        @Id @GeneratedValue(strategy = GenerationType.AUTO)
+        val id: Long,
+        val userid: String,
+        val name: String,
+        @OneToMany(mappedBy = "user")
+        val todos: List<Todo>
+)

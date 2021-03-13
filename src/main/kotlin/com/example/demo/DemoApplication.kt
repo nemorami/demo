@@ -20,7 +20,7 @@ fun main(args: Array<String>) {
 //	}
 	runApplication<DemoApplication>(*args) {
 		setBannerMode(Banner.Mode.OFF)
-	}.beanDefinitionNames.sorted().forEach {
+	}/*.beanDefinitionNames.sorted().forEach {
 		println(it)
-	}
+	}*/
 }
